@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Shradha Kerkar | BCA Student</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Shradha Kerkar, a BCA first semester student at SKE BCA College, Chandgad."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================== */
+
+    :root {
+      --black: #080808;
+      --black-light: #111111;
+      --pink: #f7b6d2;
+      --baby-pink: #ffd7e7;
+      --hot-pink: #f28bb5;
+      --white: #ffffff;
+      --gray: #b8afb4;
+      --border: rgba(247, 182, 210, 0.18);
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+
+      background:
+        radial-gradient(
+          circle at 8% 15%,
+          rgba(247, 182, 210, 0.13),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 90% 70%,
+          rgba(242, 139, 181, 0.08),
+          transparent 28%
+        );
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(247, 182, 210, 0.06);
+      filter: blur(90px);
+      right: -150px;
+      top: 20%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+
+      background: rgba(8, 8, 8, 0.72);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .nav {
+      height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .logo b {
+      color: var(--pink);
+    }
+
+    .links {
+      display: flex;
+      gap: 28px;
+
+      color: #c9c1c5;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      transition: 0.25s;
+    }
+
+    .links a:hover {
+      color: var(--pink);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+
+      display: grid;
+      place-items: center;
+
+      padding: 120px 0 70px;
+
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+
+      gap: 65px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      border: 1px solid var(--border);
+      background: rgba(247, 182, 210, 0.06);
+
+      padding: 8px 14px;
+
+      border-radius: 50px;
+
+      color: var(--baby-pink);
+      font-size: 0.8rem;
+
+      margin-bottom: 24px;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--pink);
+
+      box-shadow: 0 0 0 0 rgba(247, 182, 210, 0.6);
+
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      70% {
+        box-shadow: 0 0 0 10px transparent;
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 transparent;
+      }
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
+
+      line-height: 0.93;
+
+      letter-spacing: -0.07em;
+    }
+
+    .pink {
+      color: var(--pink);
+    }
+
+    .hero-text {
+      color: var(--gray);
+
+      max-width: 650px;
+
+      margin-top: 25px;
+
+      font-size: 1.06rem;
+    }
+
+    .buttons {
+      display: flex;
+
+      gap: 13px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 13px 20px;
+
+      border-radius: 13px;
+
+      border: 1px solid var(--border);
+
+      font-weight: 700;
+
+      transition: 0.3s;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+
+      box-shadow: 0 12px 30px rgba(247, 182, 210, 0.12);
+    }
+
+    .primary {
+      background: var(--pink);
+
+      color: #111;
+
+      border-color: var(--pink);
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* =========================
+       PROFILE
+    ========================== */
+
+    .portrait {
+      position: relative;
+
+      display: grid;
+
+      place-items: center;
+    }
+
+    .photo-frame {
+      width: min(350px, 78vw);
+
+      aspect-ratio: 4 / 5;
+
+      border-radius: 180px 180px 30px 30px;
+
+      padding: 2px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--pink),
+          transparent 60%
+        );
+
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 178px 178px 28px 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #191116,
+          #080808
+        );
+
+      display: grid;
+
+      place-items: center;
+
+      border: 9px solid #090909;
+
+      overflow: hidden;
+    }
+
+    .initials {
+      font-family: "Playfair Display", serif;
+
+      font-size: 7rem;
+
+      color: var(--pink);
+
+      text-shadow:
+        0 0 50px rgba(247, 182, 210, 0.25);
+    }
+
+    .photo-inner small {
+      display: block;
+
+      color: #aaa;
+
+      font-size: 0.8rem;
+
+      text-align: center;
+
+      margin-top: -30px;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .spark {
+      position: absolute;
+
+      color: var(--pink);
+
+      font-size: 1.5rem;
+
+      animation: spin 8s linear infinite;
+    }
+
+    .s1 {
+      top: 5%;
+      right: 3%;
+    }
+
+    .s2 {
+      bottom: 12%;
+      left: 1%;
+
+      animation-delay: -3s;
+    }
+
+    @keyframes spin {
+      50% {
+        transform: rotate(180deg) scale(1.2);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: var(--pink);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.18em;
+
+      font-weight: 800;
+
+      font-size: 0.72rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.3rem, 5vw, 4rem);
+
+      line-height: 1;
+
+      margin-top: 9px;
+    }
+
+    .section-intro {
+      color: var(--gray);
+
+      max-width: 650px;
+
+      margin-top: 15px;
+    }
+
+    .head {
+      margin-bottom: 42px;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.055),
+          rgba(255, 255, 255, 0.018)
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: 25px;
+
+      box-shadow: var(--shadow);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .about {
+      padding: 32px;
+    }
+
+    .about h3 {
+      font-size: 1.25rem;
+
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      color: var(--gray);
+    }
+
+    .facts {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+    .fact {
+      padding: 18px;
+
+      border-radius: 17px;
+
+      background: rgba(247, 182, 210, 0.055);
+
+      border: 1px solid rgba(247, 182, 210, 0.12);
+    }
+
+    .fact strong {
+      display: block;
+
+      color: var(--pink);
+
+      font-size: 1.35rem;
+    }
+
+    .fact span {
+      font-size: 0.72rem;
+
+      color: #aaa;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .timeline {
+      border-left: 1px solid var(--border);
+
+      margin-left: 10px;
+
+      padding-left: 36px;
+    }
+
+    .item {
+      position: relative;
+
+      padding-bottom: 35px;
+    }
+
+    .item:last-child {
+      padding-bottom: 0;
+    }
+
+    .item::before {
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+      height: 11px;
+
+      border-radius: 50%;
+
+      background: var(--pink);
+
+      left: -42px;
+
+      top: 7px;
+
+      box-shadow:
+        0 0 18px rgba(247, 182, 210, 0.8);
+    }
+
+    .item .date {
+      font-size: 0.72rem;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      color: var(--pink);
+    }
+
+    .item h3 {
+      margin: 5px 0;
+    }
+
+    .item p {
+      color: var(--gray);
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 13px 18px;
+
+      border-radius: 50px;
+
+      background: rgba(247, 182, 210, 0.06);
+
+      border: 1px solid var(--border);
+
+      color: #f5e9ee;
+
+      transition: 0.25s;
+    }
+
+    .skill:hover {
+      background: var(--pink);
+
+      color: #111;
+
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================== */
+
+    .achievement-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .achievement {
+      padding: 27px;
+
+      min-height: 235px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: 0.3s;
+    }
+
+    .achievement:hover {
+      transform: translateY(-7px);
+
+      border-color: rgba(247, 182, 210, 0.5);
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+
+      font-size: 3.5rem;
+
+      color: rgba(247, 182, 210, 0.15);
+
+      position: absolute;
+
+      right: 18px;
+
+      top: 5px;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 15px;
+
+      background: rgba(247, 182, 210, 0.12);
+
+      font-size: 1.35rem;
+    }
+
+    .achievement h3 {
+      margin-top: 25px;
+    }
+
+    .achievement p {
+      color: var(--gray);
+
+      font-size: 0.9rem;
+
+      margin-top: 7px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      margin-top: 16px;
+
+      padding: 5px 10px;
+
+      border-radius: 30px;
+
+      background: var(--pink);
+
+      color: #111;
+
+      font-size: 0.7rem;
+
+      font-weight: 800;
+    }
+
+    /* =========================
+       HOBBIES
+    ========================== */
+
+    .hobby-grid {
+      display: grid;
+
+      grid-template-columns: repeat(5, 1fr);
+
+      gap: 12px;
+    }
+
+    .hobby {
+      padding: 22px 12px;
+
+      text-align: center;
+
+      border-radius: 20px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255, 255, 255, 0.03);
+
+      transition: 0.3s;
+    }
+
+    .hobby:hover {
+      background: rgba(247, 182, 210, 0.1);
+
+      transform: translateY(-5px);
+    }
+
+    .hobby .emoji {
+      font-size: 2rem;
+
+      display: block;
+
+      margin-bottom: 8px;
+    }
+
+    .hobby span {
+      font-size: 0.82rem;
+
+      color: #ddd;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+      padding: 55px;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .contact::before {
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: rgba(247, 182, 210, 0.12);
+
+      filter: blur(70px);
+
+      left: -100px;
+
+      bottom: -160px;
+    }
+
+    .contact p {
+      color: var(--gray);
+
+      max-width: 600px;
+
+      margin: 15px auto;
+    }
+
+    .contact-links {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 25px;
+    }
+
+    .contact-note {
+      font-size: 0.76rem !important;
+
+      margin-top: 17px !important;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+      padding: 27px 0;
+
+      color: #8e858a;
+
+      font-size: 0.82rem;
+    }
+
+    .footer {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .heart {
+      color: var(--pink);
+    }
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(28px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+
+      transform: none;
+    }
+
+    .delay1 {
+      transition-delay: 0.12s;
+    }
+
+    .delay2 {
+      transition-delay: 0.24s;
+    }
+
+    .delay3 {
+      transition-delay: 0.36s;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        order: -1;
+      }
+
+      .photo-frame {
+        width: 260px;
+      }
+
+      .initials {
+        font-size: 5rem;
+      }
+
+      .achievement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hobby-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 38px 22px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      h1 {
+        font-size: 3.3rem;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hobby-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-text {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="container nav">
+
+      <a class="logo" href="#home">
+        Shradha<b>.</b>
+      </a>
+
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <div class="tag">
+            <span class="pulse"></span>
+            BCA • First Semester Student
+          </div>
+
+          <h1>
+            Hello, I'm
+            <br>
+            <span class="pink">Shradha Kerkar.</span>
+          </h1>
+
+          <p class="hero-text">
+            A passionate BCA student from Chandgad who loves learning,
+            participating, creating, and discovering new possibilities
+            in technology. Welcome to my little corner of the internet.
+          </p>
+
+          <div class="buttons">
+
+            <a class="btn primary" href="#about">
+              Explore My Journey ↓
+            </a>
+
+            <a class="btn secondary" href="#contact">
+              Let's Connect
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="portrait reveal delay2">
+
+          <span class="spark s1">✦</span>
+          <span class="spark s2">✧</span>
+
+          <div class="photo-frame">
+
+            <div class="photo-inner">
+
+              <div>
+
+                <div class="initials">
+                  SK
+                </div>
+
+                <small>
+                  BCA STUDENT • CHANDGAD
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="head reveal">
+
+          <div class="section-label">
+            01 / About Me
+          </div>
+
+          <h2 class="section-title">
+            Learning with
+            <span class="pink">curiosity.</span>
+          </h2>
+
+          <p class="section-intro">
+            I am Shradha Kerkar, a first-year BCA student currently
+            pursuing my first semester at SKE BCA College, Chandgad.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="card about reveal">
+
+            <h3>
+              Who I am
+            </h3>
+
+            <p>
+              I enjoy exploring new ideas, developing my academic and
+              technical knowledge, and taking part in activities that
+              help me grow in confidence and creativity.
+              I believe every experience — inside and outside the
+              classroom — is part of becoming a better version of myself.
+            </p>
+
+
+            <div class="facts">
+
+              <div class="fact">
+                <strong>86%</strong>
+                <span>10th Result</span>
+              </div>
+
+              <div class="fact">
+                <strong>BCA</strong>
+                <span>1st Semester</span>
+              </div>
+
+              <div class="fact">
+                <strong>AI +</strong>
+                <span>Robotics Certified</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card about reveal delay1">
+
+            <h3>
+              My Goal
+            </h3>
+
+            <p>
+              My goal is to build a strong foundation in computer
+              applications, improve my technical skills, participate
+              in meaningful projects and competitions, and grow into
+              a confident technology professional.
+            </p>
+
+            <div
+              style="
+                margin-top:22px;
+                color:var(--pink);
+                font-weight:700;
+              "
+            >
+              “Learn. Create. Participate. Grow.”
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+      <div class="container">
+
+        <div class="head reveal">
+
+          <div class="section-label">
+            02 / Education
+          </div>
+
+          <h2 class="section-title">
+            My academic
+            <span class="pink">journey.</span>
+          </h2>
+
+        </div>
+
+
+        <div
+          class="card"
+          style="padding:35px"
+        >
+
+          <div class="timeline">
+
+
+            <!-- 10th -->
+
+            <div class="item reveal">
+
+              <div class="date">
+                10th Standard
+              </div>
+
+              <h3>
+                The Shri Shradchandraji Madhyamik Vidyalay,
+                Kurni Buzwade
+              </h3>
+
+              <p>
+                Completed 10th standard with an excellent score of
+                <strong style="color:#fff">
+                  86%
+                </strong>.
+              </p>
+
+            </div>
+
+
+            <!-- 12th -->
+
+            <div class="item reveal delay1">
+
+              <div class="date">
+                12th Standard
+              </div>
+
+              <h3>
+                N. B. Patil Jr. College, Chandgad
+              </h3>
+
+              <p>
+                Completed higher secondary education at
+                N. B. Patil Jr. College, Chandgad.
+              </p>
+
+            </div>
+
+
+            <!-- BCA -->
+
+            <div class="item reveal delay2">
+
+              <div class="date">
+                Present • 1st Semester
+              </div>
+
+              <h3>
+                SKE BCA College, Chandgad
+              </h3>
+
+              <p>
+                Currently pursuing Bachelor of Computer Applications
+                (BCA), 1st semester.
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="head reveal">
+
+          <div class="section-label">
+            03 / Technical Skills
+          </div>
+
+          <h2 class="section-title">
+            What I'm
+            <span class="pink">learning.</span>
+          </h2>
+
+          <p class="section-intro">
+            My current technical subjects and areas of study as
+            a BCA first-semester student.
+          </p>
+
+        </div>
+
+
+        <div class="skills reveal">
+
+          <span class="skill">
+            💻 PST
+          </span>
+
+          <span class="skill">
+            🗄️ CA
+          </span>
+
+          <span class="skill">
+            📐 Mathematics
+          </span>
+
+          <span class="skill">
+            🤖 AI & Robotics
+          </span>
+
+          <span class="skill">
+            🌐 Computer Applications
+          </span>
+
+          <span class="skill">
+            🧩 Problem Solving
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================== -->
+
+    <section id="achievements">
+
+      <div class="container">
+
+        <div class="head reveal">
+
+          <div class="section-label">
+            04 / Achievements
+          </div>
+
+          <h2 class="section-title">
+            Moments I'm
+            <span class="pink">proud of.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+
+          <!-- Achievement 1 -->
+
+          <article class="card achievement reveal">
+
+            <div class="number">
+              01
+            </div>
+
+            <div class="icon">
+              🏆
+            </div>
+
+            <h3>
+              5th Place
+            </h3>
+
+            <p>
+              Secured 5th place in a poster presentation on the topic
+              <strong style="color:#fff">
+                “World Ozone Day.”
+              </strong>
+            </p>
+
+            <span class="badge">
+              Poster Presentation
+            </span>
+
+          </article>
+
+
+          <!-- Achievement 2 -->
+
+          <article class="card achievement reveal delay1">
+
+            <div class="number">
+              02
+            </div>
+
+            <div class="icon">
+              🥈
+            </div>
+
+            <h3>
+              2nd Place in Kho-Kho
+            </h3>
+
+            <p>
+              Achieved 2nd place in Kho-Kho, demonstrating teamwork,
+              energy, discipline, and sportsmanship.
+            </p>
+
+            <span class="badge">
+              Sports Achievement
+            </span>
+
+          </article>
+
+
+          <!-- Achievement 3 -->
+
+          <article class="card achievement reveal delay2">
+
+            <div class="number">
+              03
+            </div>
+
+            <div class="icon">
+              🤖
+            </div>
+
+            <h3>
+              AI & Robotics
+            </h3>
+
+            <p>
+              Successfully completed a certified course in
+              Artificial Intelligence and Robotics.
+            </p>
+
+            <span class="badge">
+              Certified Course
+            </span>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOBBIES
+    ========================== -->
+
+    <section id="hobbies">
+
+      <div class="container">
+
+        <div class="head reveal">
+
+          <div class="section-label">
+            05 / Hobbies
+          </div>
+
+          <h2 class="section-title">
+            Life beyond
+            <span class="pink">academics.</span>
+          </h2>
+
+          <p class="section-intro">
+            I love staying active, creative, and expressive through
+            sports and performing arts.
+          </p>
+
+        </div>
+
+
+        <div class="hobby-grid">
+
+
+          <div class="hobby reveal">
+
+            <span class="emoji">
+              🏃‍♀️
+            </span>
+
+            <span>
+              Kho-Kho
+            </span>
+
+          </div>
+
+
+          <div class="hobby reveal delay1">
+
+            <span class="emoji">
+              🏏
+            </span>
+
+            <span>
+              Cricket
+            </span>
+
+          </div>
+
+
+          <div class="hobby reveal delay2">
+
+            <span class="emoji">
+              💃
+            </span>
+
+            <span>
+              Dancing
+            </span>
+
+          </div>
+
+
+          <div class="hobby reveal delay3">
+
+            <span class="emoji">
+              🎤
+            </span>
+
+            <span>
+              Singing
+            </span>
+
+          </div>
+
+
+          <div class="hobby reveal">
+
+            <span class="emoji">
+              ✨
+            </span>
+
+            <span>
+              Creative Activities
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="card contact reveal">
+
+          <div class="section-label">
+            06 / Contact
+          </div>
+
+          <h2 class="section-title">
+            Let's connect &
+            <span class="pink">create.</span>
+          </h2>
+
+          <p>
+            Whether you want to connect, collaborate, or simply say hello,
+            I'd love to hear from you.
+          </p>
+
+
+          <div class="contact-links">
+
+            <!-- Replace the email below -->
+
+            <a
+              class="btn primary"
+              href="mailto:your.email@example.com"
+            >
+              ✉ Email Me
+            </a>
+
+            <a
+              class="btn secondary"
+              href="#home"
+            >
+              ↑ Back to Top
+            </a>
+
+          </div>
+
+
+          <p class="contact-note">
+            Replace
+            <strong>
+              your.email@example.com
+            </strong>
+            with your actual email before publishing.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <span>
+        © 2026 Shradha Kerkar
+      </span>
+
+      <span>
+        Made with
+        <span class="heart">♥</span>
+        & curiosity
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       ANIMATION JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const observer = new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach((element) => {
+
+        observer.observe(element);
+
+      });
+
+  </script>
+
+</body>
+</html>
